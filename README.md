@@ -1,1 +1,1 @@
-# C-Individual-Project
+# Individual Project 2 - Money Tracking
