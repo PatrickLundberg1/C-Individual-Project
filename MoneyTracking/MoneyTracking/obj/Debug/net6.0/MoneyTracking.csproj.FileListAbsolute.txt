@@ -1,0 +1,15 @@
+C:\Users\user2020\source\repos\C-Sharp-Individual-Project\MoneyTracking\MoneyTracking\bin\Debug\net6.0\MoneyTracking.exe
+C:\Users\user2020\source\repos\C-Sharp-Individual-Project\MoneyTracking\MoneyTracking\bin\Debug\net6.0\MoneyTracking.deps.json
+C:\Users\user2020\source\repos\C-Sharp-Individual-Project\MoneyTracking\MoneyTracking\bin\Debug\net6.0\MoneyTracking.runtimeconfig.json
+C:\Users\user2020\source\repos\C-Sharp-Individual-Project\MoneyTracking\MoneyTracking\bin\Debug\net6.0\MoneyTracking.dll
+C:\Users\user2020\source\repos\C-Sharp-Individual-Project\MoneyTracking\MoneyTracking\bin\Debug\net6.0\MoneyTracking.pdb
+C:\Users\user2020\source\repos\C-Sharp-Individual-Project\MoneyTracking\MoneyTracking\obj\Debug\net6.0\MoneyTracking.csproj.AssemblyReference.cache
+C:\Users\user2020\source\repos\C-Sharp-Individual-Project\MoneyTracking\MoneyTracking\obj\Debug\net6.0\MoneyTracking.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user2020\source\repos\C-Sharp-Individual-Project\MoneyTracking\MoneyTracking\obj\Debug\net6.0\MoneyTracking.AssemblyInfoInputs.cache
+C:\Users\user2020\source\repos\C-Sharp-Individual-Project\MoneyTracking\MoneyTracking\obj\Debug\net6.0\MoneyTracking.AssemblyInfo.cs
+C:\Users\user2020\source\repos\C-Sharp-Individual-Project\MoneyTracking\MoneyTracking\obj\Debug\net6.0\MoneyTracking.csproj.CoreCompileInputs.cache
+C:\Users\user2020\source\repos\C-Sharp-Individual-Project\MoneyTracking\MoneyTracking\obj\Debug\net6.0\MoneyTracking.dll
+C:\Users\user2020\source\repos\C-Sharp-Individual-Project\MoneyTracking\MoneyTracking\obj\Debug\net6.0\refint\MoneyTracking.dll
+C:\Users\user2020\source\repos\C-Sharp-Individual-Project\MoneyTracking\MoneyTracking\obj\Debug\net6.0\MoneyTracking.pdb
+C:\Users\user2020\source\repos\C-Sharp-Individual-Project\MoneyTracking\MoneyTracking\obj\Debug\net6.0\MoneyTracking.genruntimeconfig.cache
+C:\Users\user2020\source\repos\C-Sharp-Individual-Project\MoneyTracking\MoneyTracking\obj\Debug\net6.0\ref\MoneyTracking.dll

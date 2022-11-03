@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace MoneyTracking
 {
-    internal class Expense
+    internal class Expense : Transaction
     {
+        Expense(string title, int amount, int month) : base(title, amount, month)
+        { }
+        public override int getValue()
+        {
+            return Amount * -1;
+        }
+
+        public override bool isExpense()
+        {
+            return true;
+        }
     }
 }
