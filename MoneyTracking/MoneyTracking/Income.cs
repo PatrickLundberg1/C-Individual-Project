@@ -8,15 +8,15 @@ namespace MoneyTracking
 {
     internal class Income : Transaction
     {
-        Income(string title, int amount, int month) :base(title, amount, month)
+        public Income(string title, int amount, int month) :base(title, amount, month)
         { }
 
-        public override int getValue()
+        public override int GetValue()
         {
             return Amount;
         }
 
-        public override bool isExpense()
+        public override bool IsExpense()
         {
             return false;
         }

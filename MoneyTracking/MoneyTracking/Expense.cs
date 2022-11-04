@@ -8,14 +8,14 @@ namespace MoneyTracking
 {
     internal class Expense : Transaction
     {
-        Expense(string title, int amount, int month) : base(title, amount, month)
+        public Expense(string title, int amount, int month) : base(title, amount, month)
         { }
-        public override int getValue()
+        public override int GetValue()
         {
             return Amount * -1;
         }
 
-        public override bool isExpense()
+        public override bool IsExpense()
         {
             return true;
         }

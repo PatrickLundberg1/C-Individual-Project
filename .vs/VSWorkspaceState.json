@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MoneyTracking",
+    "\\MoneyTracking\\MoneyTracking"
   ],
+  "SelectedNode": "\\MoneyTracking\\MoneyTracking\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

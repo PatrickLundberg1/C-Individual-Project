@@ -19,12 +19,12 @@ namespace MoneyTracking
         public int Amount { get; private set; }
         public int Month { get; private set; }
 
-        void Edit()
+        public void Edit()
         {
             // To Be Implemented
         }
 
-        public abstract int getValue();
-        public abstract bool isExpense();
+        public abstract int GetValue();
+        public abstract bool IsExpense();
     }
 }
