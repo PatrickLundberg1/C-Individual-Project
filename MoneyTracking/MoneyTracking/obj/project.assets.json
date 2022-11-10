@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user2020\\source\\repos\\C-Sharp-Individual-Project\\MoneyTracking\\MoneyTracking\\MoneyTracking.csproj",
+      "projectUniqueName": "C:\\Users\\user2020\\Source\\Repos\\C-Sharp-Individual-Project\\MoneyTracking\\MoneyTracking\\MoneyTracking.csproj",
       "projectName": "MoneyTracking",
-      "projectPath": "C:\\Users\\user2020\\source\\repos\\C-Sharp-Individual-Project\\MoneyTracking\\MoneyTracking\\MoneyTracking.csproj",
+      "projectPath": "C:\\Users\\user2020\\Source\\Repos\\C-Sharp-Individual-Project\\MoneyTracking\\MoneyTracking\\MoneyTracking.csproj",
       "packagesPath": "C:\\Users\\user2020\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user2020\\source\\repos\\C-Sharp-Individual-Project\\MoneyTracking\\MoneyTracking\\obj\\",
+      "outputPath": "C:\\Users\\user2020\\Source\\Repos\\C-Sharp-Individual-Project\\MoneyTracking\\MoneyTracking\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user2020\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

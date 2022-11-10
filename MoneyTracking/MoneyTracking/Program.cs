@@ -10,7 +10,7 @@ while (true)
 {
     Console.WriteLine($"You have currently {transactions.GetSum()} kr on your account");
     Console.WriteLine("Pick an option:");
-    Console.WriteLine("(1) Show items (All/Expenses/Incomes");
+    Console.WriteLine("(1) Show items (All/Expenses/Incomes)");
     Console.WriteLine("(2) Add new Expense/Income");
     Console.WriteLine("(3) Edit or Remove item");
     Console.WriteLine("(4) Save and Quit");

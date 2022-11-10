@@ -49,7 +49,7 @@ namespace MoneyTracking
                             Console.WriteLine("Title can not be empty");
                             Console.ResetColor();
                         }
-                        else if(trans_list.FindIndex(t => t.Title == title) != -1)
+                        else if(trans_list.Exists(t => t.Title == title))
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("Title has already been used");
@@ -112,6 +112,9 @@ namespace MoneyTracking
                     {
                         trans_list.Add(new Income(title, amount, month));
                     }
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Transaction added successfully");
+                    Console.ResetColor();
 
                     break;
                 }
@@ -157,6 +160,9 @@ namespace MoneyTracking
             else
             {
                 trans_list.RemoveAt(item_index);
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"Transaction \"{input}\" removed successfully.");
+                Console.ResetColor();
             }
         }
 
@@ -200,12 +206,70 @@ namespace MoneyTracking
                 }
             }
 
-            List<Transaction> ordered_list = trans_list.OrderBy(t => t.Title).ToList();
+            while (true)
+            {
+                Console.Write("Please enter A or D for (A)scending or (D)escending order: ");
+                input_order = (Console.ReadLine() ?? "").Trim().ToLower();
+
+                if (input_order != "a" && input_order != "d")
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Command not understood, try again");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            List<Transaction> ordered_list = trans_list;
+            Func<Transaction, int> order_func = (t) => 0;
+
+            if (input_select == "i")
+            {
+                ordered_list = ordered_list.Where(t => !t.IsExpense()).ToList();
+            }
+            else if(input_select == "e")
+            {
+                ordered_list = ordered_list.Where(t => t.IsExpense()).ToList();
+            }
+
+            if (input_by == "t")
+            {
+                if (input_order == "a")
+                {
+                    ordered_list = ordered_list.OrderBy(t => t.Title).ToList();
+                }
+                else if (input_order == "d")
+                {
+                    ordered_list = ordered_list.OrderByDescending(t => t.Title).ToList();
+                }
+            }
+            else 
+            {
+                if (input_by == "m")
+                {
+                    order_func = (t) => t.Month;
+                }
+                else if (input_by == "a")
+                {
+                    order_func = (t) => t.Amount;
+                }
+
+                if (input_order == "a")
+                {
+                    ordered_list = ordered_list.OrderBy(order_func).ToList();
+                }
+                else if (input_order == "d")
+                {
+                    ordered_list = ordered_list.OrderByDescending(order_func).ToList();
+                }
+            }
 
             Console.WriteLine("--------------------------------------------------");
-            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Title".PadRight(20) + "Month".PadRight(20) + "Amount");
-            Console.ResetColor();
+            Console.WriteLine("-----".PadRight(20) + "-----".PadRight(20) + "------");
 
             foreach (Transaction t in ordered_list)
             {
