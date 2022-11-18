@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace MoneyTracking
@@ -10,18 +11,78 @@ namespace MoneyTracking
     {
         public TrackLog()
         {
-            // Placeholder empty list, replace with Load when implemented
             trans_list = new List<Transaction>();
+            Load();
         }
 
         private void Load()
         {
-            // To Be Implemented
+            //string path = Directory.GetCurrentDirectory();
+            string file_path = "TrackMoney_Data.json";
+            /*
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(file_path);
+            Console.ResetColor();
+            */
+            if (File.Exists(file_path))
+            {
+                // read JSON from file as Transaction_JSON
+                string json_data = File.ReadAllText(file_path);
+                List<Transaction_JSON> load_list = JsonSerializer.Deserialize<List<Transaction_JSON>>(json_data) ?? new List<Transaction_JSON>();
+
+                foreach(Transaction_JSON tj in load_list)
+                {
+                    if(tj.Type == "EXPENSE")
+                    {
+                        trans_list.Add(new Expense(tj.Title, tj.Amount, tj.Month));
+                    }
+                    else if(tj.Type == "INCOME")
+                    {
+                        trans_list.Add(new Income(tj.Title, tj.Amount, tj.Month));
+                    }
+                    else
+                    {
+                        throw new Exception("An error has occured with the JSON input to the Load function");
+                    }
+                }
+            }
+            else
+            {
+                // create the file and write an empty json list to it
+                File.WriteAllText(file_path, "[]");
+            }
         }
 
         public void Save()
         {
-            // To Be Implemented
+            string file_path = "TrackMoney_Data.json";
+
+            try
+            {
+                // save list as Transaction_JSON to file
+                //string json_data = JsonSerializer.Serialize(trans_list);
+                //File.WriteAllText(file_path, json_data);
+
+                List<Transaction_JSON> json_list = new List<Transaction_JSON>();
+                foreach(Transaction trans in trans_list) { 
+                    Transaction_JSON json_obj = new Transaction_JSON();
+                    json_obj.Title = trans.Title;
+                    json_obj.Amount = trans.Amount;
+                    json_obj.Month = trans.Month;
+                    json_obj.Type = trans.IsExpense() ? "EXPENSE" : "INCOME";
+                    json_list.Add(json_obj);
+                }
+                string json_data = JsonSerializer.Serialize(json_list);
+                File.WriteAllText(file_path, json_data);
+            }
+            catch (Exception e)
+            {
+                // create the file and write an empty json list to it
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error when saving to file. Try restarting the application.");
+                Console.WriteLine(e.Message);
+                Console.ResetColor();
+            }
         }
 
         public void AddTransaction()
