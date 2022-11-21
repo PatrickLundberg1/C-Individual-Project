@@ -15,15 +15,15 @@ namespace MoneyTracking
             Load();
         }
 
+        
+         /// <summary>
+         /// Loads the contents of the local JSON file to the transaction list.
+         /// If the file doesn't exist, creates the file with an empty list instead.
+         /// </summary>
         private void Load()
         {
-            //string path = Directory.GetCurrentDirectory();
             string file_path = "TrackMoney_Data.json";
-            /*
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine(file_path);
-            Console.ResetColor();
-            */
+            
             if (File.Exists(file_path))
             {
                 // read JSON from file as Transaction_JSON
@@ -53,16 +53,17 @@ namespace MoneyTracking
             }
         }
 
+        /// <summary>
+        /// Saves all current transactions to the local JSON file.
+        /// This overwrites the contents of that file.
+        /// Because of this, the Load function must be used before this function.
+        /// </summary>
         public void Save()
         {
             string file_path = "TrackMoney_Data.json";
 
             try
             {
-                // save list as Transaction_JSON to file
-                //string json_data = JsonSerializer.Serialize(trans_list);
-                //File.WriteAllText(file_path, json_data);
-
                 List<Transaction_JSON> json_list = new List<Transaction_JSON>();
                 foreach(Transaction trans in trans_list) { 
                     Transaction_JSON json_obj = new Transaction_JSON();
@@ -85,6 +86,9 @@ namespace MoneyTracking
             }
         }
 
+        /// <summary>
+        /// Reads input from user to add a new transaction.
+        /// </summary>
         public void AddTransaction()
         {
             string input;
@@ -188,6 +192,10 @@ namespace MoneyTracking
             }
         }
 
+        /// <summary>
+        /// Reads transaction title as input from user and calls the edit function for that transaction.
+        /// <br></br> For the rest, see: <see cref="Transaction.Edit"/>
+        /// </summary>
         public void EditTransaction()
         {
             Console.Write("Please enter the title of the item to edit: ");
@@ -206,6 +214,9 @@ namespace MoneyTracking
             }
         }
 
+        /// <summary>
+        /// Reads input from user and uses it to remove the designated transaction.
+        /// </summary>
         public void RemoveTransaction()
         {
             Console.Write("Please enter the title of the item to remove: ");
@@ -227,6 +238,9 @@ namespace MoneyTracking
             }
         }
 
+        /// <summary>
+        /// Reads input from user and uses the input settings to display a transaction table
+        /// </summary>
         public void Display()
         {
             string input_select;
@@ -339,9 +353,9 @@ namespace MoneyTracking
             Console.WriteLine("--------------------------------------------------");
         }
 
-        /**
-         * Returns the sum of the value of all transactions stored
-         */
+        /// <summary>
+        /// Returns the sum of the value of all transactions stored
+        /// </summary>
         public int GetSum()
         {
             int total_sum = 0;

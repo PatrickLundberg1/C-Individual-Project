@@ -19,6 +19,9 @@ namespace MoneyTracking
         public int Amount { get; private set; }
         public int Month { get; private set; }
 
+        /// <summary>
+        /// Reads input from the user to change the value of Amount or Month
+        /// </summary>
         public void Edit()
         {
             string input;
